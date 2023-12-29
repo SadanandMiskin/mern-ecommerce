@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import path from "path";
-
+ 
 const productSchema = mongoose.Schema({
     title: String,
     price: Number,
