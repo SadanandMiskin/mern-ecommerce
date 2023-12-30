@@ -1,12 +1,19 @@
 import mongoose from "mongoose";
 import path from "path";
-
+ 
 const productSchema = mongoose.Schema({
-    title: String,
+    productName: String,
     price: Number,
-    name: String,
-    images:String
+    sellerName: String,
+    category: String,
+    images:[
+        {
+            data: Buffer,
+            contentType: String,
+        }
+    ]
+
 });
 
-const product = mongoose.model('Product', productSchema); // Change the model name to 'Product'
-export default product;
+const product = mongoose.model('Product', productSchema)
+export default product

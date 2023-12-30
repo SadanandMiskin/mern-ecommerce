@@ -5,13 +5,13 @@ const router = express.Router();
 
 
 
+
 router.get('/',  async (req, res) => {
  
     try{
        const products =  await Product.find()
        const productList = [...products]
-       console.log(productList)
-       res.json(
+       res.json( 
         productList
        ).status(200)
     }

@@ -1,48 +1,37 @@
 import express from 'express'
 import multer from 'multer'
 import Product from '../models/product.js'
-import path from 'path'
+
 const router = express.Router()
 
+ 
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/')
-  },
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.originalname
-    )
-  },
-})
+const storage = multer.memoryStorage()
 
 // Initialize upload
 const upload = multer({
   storage: storage,
 })
 
-router.post('/', upload.single('images'), async (req, res) => {
+router.post('/', upload.array('images' , 3), async (req, res) => {
   try {
-    const { title, price, name } = req.body
-    console.log(req.file)
-    // Check if a file was uploaded
-    if (!req.file || !req.file.originalname) {
-      return res.status(400).json({
-        success: false,
-        message: 'No valid image was uploaded.',
-      })
-    }
-
+    const { productName, price,  sellerName, category } = req.body
+    
+    const images = req.files.map((file) => ({
+      data: file.buffer,
+      contentType: file.mimetype,
+    }))
+    
     // Create a new product
     const newProduct = await Product.create({
-      title,
+      productName,
       price,
-      name,
-      images: req.file.originalname, // Store only the file name
+      sellerName,
+      category,
+      images:images
     })
 
-    // Send a JSON response
+  
     res.json({
       success: true,
       message: 'Product uploaded successfully',

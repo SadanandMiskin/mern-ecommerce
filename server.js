@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 
 import express from "express"
 import path from "path"
@@ -5,6 +7,8 @@ import bodyParser from "body-parser";
 const app = express() 
 
 const __dirname = path.resolve();
+
+
 
 
 import {db} from "./config/db.js"
@@ -17,6 +21,7 @@ app.use(bodyParser.urlencoded({
 app.use('/uploads', express.static('uploads'))
 app.use(express.json());
 
+//routes
 app.use('/addproduct', productRoutes)
 app.use('/getproducts', productList)
 
