@@ -11,7 +11,6 @@ router.get('/',  async (req, res) => {
     try{
        const products =  await Product.find()
        const productList = [...products]
-     
        res.json(
         productList
        ).status(200)
