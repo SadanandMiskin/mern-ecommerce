@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 
 import express from "express"
 import path from "path"
@@ -19,6 +21,7 @@ app.use(bodyParser.urlencoded({
 app.use('/uploads', express.static('uploads'))
 app.use(express.json());
 
+//routes
 app.use('/addproduct', productRoutes)
 app.use('/getproducts', productList)
 
