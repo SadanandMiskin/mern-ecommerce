@@ -1,7 +1,7 @@
 import express from 'express'
 import multer from 'multer'
 import Product from '../models/product.js'
-import path from 'path'
+
 const router = express.Router()
 
  
@@ -25,7 +25,7 @@ const upload = multer({
 
 router.post('/', upload.single('images'), async (req, res) => {
   try {
-    const { title, price, name } = req.body
+    const { title, price,category, name } = req.body
     console.log(req.file)
     // Check if a file was uploaded
     if (!req.file || !req.file.originalname) {
@@ -40,6 +40,7 @@ router.post('/', upload.single('images'), async (req, res) => {
       title,
       price,
       name,
+      category,
       images: req.file.originalname, // Store only the file name
     })
 
