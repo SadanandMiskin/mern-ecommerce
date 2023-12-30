@@ -7,6 +7,8 @@ const app = express()
 const __dirname = path.resolve();
 
 
+
+
 import {db} from "./config/db.js"
 import productRoutes from "./routes/product.js"
 import productList from "./routes/getproducts.js"
