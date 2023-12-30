@@ -6,17 +6,7 @@ const router = express.Router()
 
  
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/')
-  },
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.originalname
-    )
-  },
-})
+const storage = multer.memoryStorage()
 
 // Initialize upload
 const upload = multer({
@@ -41,7 +31,10 @@ router.post('/', upload.single('images'), async (req, res) => {
       price,
       name,
       category,
-      images: req.file.originalname, // Store only the file name
+      images: {
+        data: req.file.buffer,
+        contentType: req.file.mimetype,
+      }, // Store only the file name
     })
 
     // Send a JSON response

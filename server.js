@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({
 app.use('/uploads', express.static('uploads'))
 app.use(express.json());
 
+//routes
 app.use('/addproduct', productRoutes)
 app.use('/getproducts', productList)
 
