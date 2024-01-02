@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import path from "path";
  
 const productSchema = mongoose.Schema({
     productName: String,
@@ -13,7 +12,7 @@ const productSchema = mongoose.Schema({
         }
     ]
 
-});
+})
 
 const product = mongoose.model('Product', productSchema)
 export default product
