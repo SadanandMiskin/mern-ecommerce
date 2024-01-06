@@ -7,13 +7,13 @@ const getCharacterValidationError = (str) => {
 export const loginSchema = (isSignInForm) => {
 	return (
 		Yup.object({
-			name: Yup.string().when("isSignInForm", {
+			customerName: Yup.string().when("isSignInForm", {
 				is: false,
 				then: Yup.string().min(2).required("Name is required"),
 				otherwise: Yup.string().notRequired(),
 			}),
-			email: Yup.string().email().required(),
-			password: Yup.string()
+			customerEmail: Yup.string().email().required(),
+			customerPassword: Yup.string()
 				.required("Please enter a password")
 				// check minimum characters
 				.min(8, "Password must have at least 8 characters")

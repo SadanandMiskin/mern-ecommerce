@@ -13,17 +13,24 @@ const CategoryList = ({ category, categoryPage }) => {
 	}
 
 	return (
-		<div className="mt-10 mb-5 px-10">
-			<Link to={"/" + category[0]?.category}>
-				<h1 className="text-2xl py-3 inline-block px-2 hover:underline hover:scale-95 duration-150">
+		<div className={"mb-5 px-10 " + (categoryPage ? "w-[80%] mx-auto" : "")}>
+			{categoryPage ? (
+				<h1 className="text-2xl py-3 inline-block px-2">
 					{category[0]?.category}
 				</h1>
-			</Link>
-
+			) : (
+				<Link to={"/" + category[0]?.category}>
+					<h1 className="text-2xl py-3 inline-block px-2 hover:underline hover:scale-95 duration-150">
+						{category[0]?.category}
+					</h1>
+				</Link>
+			)}
 			<div
 				className={
 					"flex " +
-					(categoryPage ? "flex-wrap" : "overflow-x-scroll no-scrollbar")
+					(categoryPage
+						? "flex-wrap justify-center"
+						: "overflow-x-scroll no-scrollbar")
 				}
 			>
 				{category.map(
@@ -31,9 +38,11 @@ const CategoryList = ({ category, categoryPage }) => {
 						prod?.category && (
 							<ProductList
 								key={prod?._id}
+								id={prod?._id}
 								productName={prod?.productName}
 								category={prod?.category}
 								price={prod?.price}
+								categoryPage={categoryPage}
 								img={
 									"data:" +
 									prod?.images[0]?.contentType +
@@ -41,6 +50,7 @@ const CategoryList = ({ category, categoryPage }) => {
 									toBase64(prod?.images[0]?.data?.data)
 								}
 							/>
+							// </Link>
 						)
 				)}
 			</div>
