@@ -12,6 +12,7 @@ const productSchema = mongoose.Schema({
             contentType: String,
         }
     ]
+ 
 
 })
 
