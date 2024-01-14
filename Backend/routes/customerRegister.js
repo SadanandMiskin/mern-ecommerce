@@ -4,6 +4,7 @@ import customer from '../models/customer.js'
 
 const router = express.Router()
 
+
 router.post('/' , async(req,res)=>{
     try {
         const { customerName, customerEmail, customerPhone, customerPassword } = req.body
