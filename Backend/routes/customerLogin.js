@@ -11,6 +11,7 @@ const router = express.Router()
 
 
 
+
 router.post('/' ,passport.authenticate("local"), async(req,res) =>{
     res.json('Authenticated')
 })
