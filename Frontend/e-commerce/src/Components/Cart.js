@@ -40,6 +40,7 @@ const Cart = () => {
 		if (!user) {
 			navigate("/login");
 		} else {
+			navigate("/place-order");
 			// Send it to backend
 		}
 	};
