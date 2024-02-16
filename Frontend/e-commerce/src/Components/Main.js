@@ -7,6 +7,8 @@ import Product from "./Product";
 import Cart from "./Cart";
 import CategoryPageError from "./CategoryPageError";
 import NoProduct from "./NoProduct";
+import Profile from "./Profile";
+import PlaceOrder from "./PlaceOrder";
 
 const Main = () => {
 	return (
@@ -22,6 +24,8 @@ const Main = () => {
 			</Route>
 			<Route path="/login" element={<Login />}></Route>
 			<Route path="/cart" element={<Cart />}></Route>
+			<Route path="/profile" element={<Profile />}></Route>
+			<Route path="/place-order" element={<PlaceOrder />}></Route>
 
 			<Route path="/gibberish" element={<CategoryPageError />}></Route>
 		</Routes>

@@ -80,7 +80,7 @@ const Header = ({ ifInCart, ifInLogin }) => {
 						</button>
 					</form>
 
-					<div>
+					<div className="flex items-center">
 						<button
 							onClick={handleLogin}
 							className="bg-slate-400 mr-9 shadow-xl py-3 ml-1 px-5 rounded-md hover:bg-slate-500 hover:text-white duration-150"
@@ -99,6 +99,15 @@ const Header = ({ ifInCart, ifInLogin }) => {
 								</button>
 							</Link>
 						)}
+						<Link to="/profile">
+							<div className="shadow-2xl ml-7 duration-150">
+								<img
+									className="rounded-full w-10"
+									alt="user"
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2yJWVwI9ZFnJhI3FIB5wIK4Ys7B8J-u5hfQ&usqp=CAU"
+								/>
+							</div>
+						</Link>
 					</div>
 				</>
 			)}
