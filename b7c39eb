@@ -1,0 +1,22 @@
+[33mf427287[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{0}: reset: moving to f427287
+[33m941c363[m HEAD@{1}: reset: moving to 941c363
+[33mda2703b[m HEAD@{2}: reset: moving to da2703b
+[33m019acab[m HEAD@{3}: reset: moving to 019acab
+[33m019acab[m HEAD@{4}: reset: moving to 019acab
+[33m019acab[m HEAD@{5}: reset: moving to 019acab
+[33m019acab[m HEAD@{6}: reset: moving to 019acab
+[33m019acab[m HEAD@{7}: reset: moving to 019acab
+[33mb4d4d95[m HEAD@{8}: reset: moving to b4d4d95
+[33mb4d4d95[m HEAD@{9}: commit: JWT Auth, admin add product
+[33m6bdfd21[m HEAD@{10}: commit: JWT Auth, admin add product
+[33me79f171[m HEAD@{11}: commit: JWT Auth, admin add product
+[33m019acab[m HEAD@{12}: commit: JWT Auth, admin add product
+[33mbfe1c11[m HEAD@{13}: commit: JWT Auth, admin add product
+[33mda2703b[m HEAD@{14}: reset: moving to HEAD~2
+[33m49c9c9c[m HEAD@{15}: commit: JWT Auth, admin add product
+[33mb7c39eb[m HEAD@{16}: commit: JWT Auth
+[33mda2703b[m HEAD@{17}: commit: JWT Auth
+[33m941c363[m HEAD@{18}: commit: JWT Auth
+[33m0aeed69[m HEAD@{19}: commit: Add customer cart, admin item add , JWT auth
+[33mf427287[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{20}: checkout: moving from master to main
+[33mf427287[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{21}: commit (initial): Restructure: Add cart, login
