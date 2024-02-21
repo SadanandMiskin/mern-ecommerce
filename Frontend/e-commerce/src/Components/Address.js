@@ -1,11 +1,11 @@
-import { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useRef } from "react"; // Import React
+import { useDispatch } from "react-redux";
 import { addAddress } from "../Utils/userSlice";
 
 const Address = () => {
 	const cNo = useRef(null);
 	const house = useRef(null);
-	const street = useRef(null);
+	const street = useRef(null); 
 	const landmark = useRef(null);
 	const city = useRef(null);
 

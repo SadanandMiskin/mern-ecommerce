@@ -7,5 +7,5 @@ const customerSchema = mongoose.Schema({
 	customerPassword: String,
 });
 
-const customer = mongoose.model("Customer", customerSchema);
+const customer = mongoose.model("customer", customerSchema);
 export default customer;

@@ -10,7 +10,28 @@ const router = express.Router()
 // })
 
 router.post('/' ,passport.authenticate("local"), async(req,res) =>{
-    res.json('Authenticated')
+    const {customerEmail, customerPassword} = req.body
+   try{
+    const customerData = await customer.findOne({customerEmail})
+
+
+    if(customerData.customerEmail == customerEmail && customerData.customerPassword == customerPassword){
+        jwt.sign({customerEmail}, process.env.user_token, { expiresIn: '1h' },(err, token)=> {
+            if(err){
+              return res.send(err)
+            }
+            else{
+                res.send(token)
+            }
+    
+        })
+
+        req.userId = customerData._id
+    }
+   }
+   catch(err){
+    console.log(err)
+   }
 })
 
 
