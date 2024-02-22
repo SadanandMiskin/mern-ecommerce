@@ -11,6 +11,7 @@ const router = express.Router()
 router.get('/cart' , Auth , async (req, res)=>{
     try{
         const custID= req.session.userID
+        console.log(custID)
         const cartItems = await customerCart.findOne({customer: custID})
         .populate('customer')
         .populate('product')
@@ -37,12 +38,30 @@ router.post('/additem/:id', Auth, async (req,res)=>{
 
         // const productItem = await product.findOne({_id: productId})
         
+        let cart = customerCart.findOne({customer: custID})
+
+        if(!cart) {
+            await customerCart.create({
+                customer: custID,
+                product: productId
+            })
+            res.json('New cart created for new user')
+        }
+        else {
+            await customerCart.findOneAndUpdate({customer: custID} , {$push: {product: productId}})
+            res.send('New item added')
+        }
+
         console.log(custID)
 
-       await customerCart.create({
-            customer: custID,
-            product: productId
-        })
+    //    await customerCart.create({
+    //         customer: custID,
+    //         product: productId
+    //     })
+
+        // await customerCart.insertOne({
+        //     product: [productId]
+        // })
         res.json('New item added')
     } catch (err) {
         console.log(err)
